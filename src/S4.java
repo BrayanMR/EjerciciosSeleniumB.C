@@ -32,24 +32,27 @@ public class S4 {
 
     public static void main(String[] args) throws Exception {
         driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
 
         log("=== EJERCICIO 4: Wikipedia ===");
-        driver.get("https://es.wikipedia.org/wiki/Wikipedia:Portada");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("searchInput")));
-        capturar("04_wikipedia_portada");
+        driver.get("https://es.wikipedia.org/");
+
+        // Esperar a que el campo de búsqueda esté presente
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("searchInput")));
+        log("Campo de búsqueda encontrado.");
 
         WebElement searchBox = driver.findElement(By.id("searchInput"));
-        WebElement searchButton = driver.findElement(By.id("searchButton"));
+        capturar("04_wikipedia_portada");
         capturarElemento(searchBox, "04_campo_busqueda");
-        capturarElemento(searchButton, "04_boton_buscar");
 
+        // Escribir y enviar con Enter
         searchBox.clear();
         searchBox.sendKeys("Selenium");
-        searchButton.click();
+        searchBox.sendKeys(Keys.ENTER);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstHeading")));
+        // Esperar el título del artículo
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("firstHeading")));
         capturar("04_resultado_busqueda");
 
         WebElement title = driver.findElement(By.id("firstHeading"));

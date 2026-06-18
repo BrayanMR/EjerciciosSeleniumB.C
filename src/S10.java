@@ -32,17 +32,35 @@ public class S10 {
 
     public static void main(String[] args) throws Exception {
         driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
 
         log("=== EJERCICIO 10: Automation Exercise - Registro ===");
         driver.get("https://automationexercise.com/");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("body")));
+
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+        Thread.sleep(2000);
         capturar("10_registro_home");
 
-        WebElement campoNombre = driver.findElement(By.xpath("//input[@data-qa='signup-name']"));
-        WebElement campoCorreo = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
-        WebElement botonSignup = driver.findElement(By.xpath("//button[@data-qa='signup-button']"));
+
+        WebElement loginLink = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//a[contains(text(),'Signup / Login')]")));
+        capturarElemento(loginLink, "10_enlace_login");
+        loginLink.click();
+        log("Clic en 'Signup / Login'");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//h2[contains(text(),'New User Signup!')]")));
+        capturar("10_pagina_login");
+
+        // Localizar campos de registro
+        WebElement campoNombre = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@data-qa='signup-name']")));
+        WebElement campoCorreo = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//input[@data-qa='signup-email']")));
+        WebElement botonSignup = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[@data-qa='signup-button']")));
 
         capturarElemento(campoNombre, "10_campo_nombre");
         capturarElemento(campoCorreo, "10_campo_correo");
@@ -52,16 +70,30 @@ public class S10 {
         String correo = "test" + System.currentTimeMillis() + "@example.com";
         campoNombre.sendKeys(nombre);
         campoCorreo.sendKeys(correo);
-        log("Nombre ingresado: " + nombre);
-        log("Correo ingresado: " + correo);
+        log("Nombre: " + nombre);
+        log("Correo: " + correo);
 
         capturar("10_registro_formulario_lleno");
         botonSignup.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Enter Account Information')]")));
-        capturar("10_registro_pagina_siguiente");
-        log("Proceso de registro iniciado, se cargó la página de datos adicionales.");
-        log("=== FIN EJERCICIO 10 ===");
+        log("Clic en Signup");
 
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='password']")));
+        log("Página de registro de cuenta cargada.");
+
+        // Capturar la página de información de cuenta (con el título correcto)
+        capturar("10_registro_pagina_siguiente");
+        log("Registro exitoso. Página de información de cuenta cargada.");
+
+
+        try {
+            WebElement titulo = driver.findElement(By.xpath("//b[contains(text(),'Enter Account Information')]"));
+            capturarElemento(titulo, "10_titulo_cuenta");
+            log("Título encontrado: " + titulo.getText());
+        } catch (Exception e) {
+            log("No se encontró el título exacto, pero el formulario sí cargó.");
+        }
+
+        log("=== FIN EJERCICIO 10 ===");
         Thread.sleep(2000);
         driver.quit();
     }

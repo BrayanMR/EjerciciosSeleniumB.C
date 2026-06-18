@@ -38,22 +38,24 @@ public class S5 {
 
         log("=== EJERCICIO 5: Demoblaze - Carrito con 2 productos ===");
         driver.get("https://www.demoblaze.com/");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("contcont")));
+        // Esperar a que haya al menos un producto
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".card-block .card-title a")));
         capturar("05_demoblaze_inicio");
 
         List<WebElement> productos = driver.findElements(By.cssSelector(".card-block .card-title a"));
         if (productos.size() < 2) {
-            log("No hay suficientes productos visibles.");
+            log("No hay suficientes productos. Encontrados: " + productos.size());
             driver.quit();
             return;
         }
 
-        // Primer producto
+        //PRIMER PRODUCTO
         productos.get(0).click();
+        // Esperar que cargue la página de detalle (el nombre del producto es un buen indicador)
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("name")));
         capturar("05_producto1_detalle");
 
-        WebElement tarjeta1 = driver.findElement(By.className("product-information"));
+        WebElement tarjeta1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("more-information")));
         capturarElemento(tarjeta1, "05_tarjeta_producto1");
 
         WebElement addToCart1 = driver.findElement(By.xpath("//a[contains(text(),'Add to cart')]"));
@@ -63,15 +65,24 @@ public class S5 {
         Alert alerta = driver.switchTo().alert();
         log("Alerta producto1: " + alerta.getText());
         alerta.accept();
-        driver.navigate().back();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("contcont")));
 
-        // Segundo producto (índice 1)
-        driver.findElements(By.cssSelector(".card-block .card-title a")).get(1).click();
+        // Volver a la página principal
+        driver.get("https://www.demoblaze.com/");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".card-block .card-title a")));
+        capturar("05_demoblaze_inicio_despues_producto1");
+
+        //SEGUNDO PRODUCTO
+        productos = driver.findElements(By.cssSelector(".card-block .card-title a"));
+        if (productos.size() < 2) {
+            log("No hay suficientes productos después de recargar.");
+            driver.quit();
+            return;
+        }
+        productos.get(1).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("name")));
         capturar("05_producto2_detalle");
 
-        WebElement tarjeta2 = driver.findElement(By.className("product-information"));
+        WebElement tarjeta2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("more-information")));
         capturarElemento(tarjeta2, "05_tarjeta_producto2");
 
         WebElement addToCart2 = driver.findElement(By.xpath("//a[contains(text(),'Add to cart')]"));
@@ -82,6 +93,7 @@ public class S5 {
         log("Alerta producto2: " + alerta.getText());
         alerta.accept();
 
+        // Ir al carrito
         driver.get("https://www.demoblaze.com/cart.html");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("totalp")));
         capturar("05_carrito_dos_productos");
@@ -89,7 +101,7 @@ public class S5 {
         WebElement total = driver.findElement(By.id("totalp"));
         capturarElemento(total, "05_total_carrito");
         log("Total del carrito: " + total.getText());
-        log("=== FIN EJERCICIO 5 ===");
+        log("FIN EJERCICIO 5");
 
         Thread.sleep(2000);
         driver.quit();
