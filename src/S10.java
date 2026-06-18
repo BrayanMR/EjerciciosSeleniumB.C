@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.time.Duration;
 
-public class S4 {
+public class S10 {
     static WebDriver driver;
 
     public static void capturar(String nombre) throws Exception {
@@ -35,30 +35,32 @@ public class S4 {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.manage().window().maximize();
 
-        log("=== EJERCICIO 4: Wikipedia ===");
-        driver.get("https://es.wikipedia.org/wiki/Wikipedia:Portada");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("searchInput")));
-        capturar("04_wikipedia_portada");
+        log("=== EJERCICIO 10: Automation Exercise - Registro ===");
+        driver.get("https://automationexercise.com/");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("body")));
+        capturar("10_registro_home");
 
-        WebElement searchBox = driver.findElement(By.id("searchInput"));
-        WebElement searchButton = driver.findElement(By.id("searchButton"));
-        capturarElemento(searchBox, "04_campo_busqueda");
-        capturarElemento(searchButton, "04_boton_buscar");
+        WebElement campoNombre = driver.findElement(By.xpath("//input[@data-qa='signup-name']"));
+        WebElement campoCorreo = driver.findElement(By.xpath("//input[@data-qa='signup-email']"));
+        WebElement botonSignup = driver.findElement(By.xpath("//button[@data-qa='signup-button']"));
 
-        searchBox.clear();
-        searchBox.sendKeys("Selenium");
-        searchButton.click();
+        capturarElemento(campoNombre, "10_campo_nombre");
+        capturarElemento(campoCorreo, "10_campo_correo");
+        capturarElemento(botonSignup, "10_boton_signup");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstHeading")));
-        capturar("04_resultado_busqueda");
+        String nombre = "TestUser" + System.currentTimeMillis();
+        String correo = "test" + System.currentTimeMillis() + "@example.com";
+        campoNombre.sendKeys(nombre);
+        campoCorreo.sendKeys(correo);
+        log("Nombre ingresado: " + nombre);
+        log("Correo ingresado: " + correo);
 
-        WebElement title = driver.findElement(By.id("firstHeading"));
-        capturarElemento(title, "04_titulo_articulo");
-
-        log("Palabra buscada: Selenium");
-        log("URL cargada: " + driver.getCurrentUrl());
-        log("Resultado encontrado: " + title.getText());
-        log("=== FIN EJERCICIO 4 ===");
+        capturar("10_registro_formulario_lleno");
+        botonSignup.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Enter Account Information')]")));
+        capturar("10_registro_pagina_siguiente");
+        log("Proceso de registro iniciado, se cargó la página de datos adicionales.");
+        log("=== FIN EJERCICIO 10 ===");
 
         Thread.sleep(2000);
         driver.quit();

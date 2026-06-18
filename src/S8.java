@@ -5,8 +5,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.time.Duration;
+import java.util.List;
 
-public class S4 {
+public class S8 {
     static WebDriver driver;
 
     public static void capturar(String nombre) throws Exception {
@@ -35,31 +36,27 @@ public class S4 {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.manage().window().maximize();
 
-        log("=== EJERCICIO 4: Wikipedia ===");
-        driver.get("https://es.wikipedia.org/wiki/Wikipedia:Portada");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("searchInput")));
-        capturar("04_wikipedia_portada");
+        log("=== EJERCICIO 8: Demoblaze - Categoría Phones ===");
+        driver.get("https://www.demoblaze.com/");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("contcont")));
+        capturar("08_categoria_inicio");
 
-        WebElement searchBox = driver.findElement(By.id("searchInput"));
-        WebElement searchButton = driver.findElement(By.id("searchButton"));
-        capturarElemento(searchBox, "04_campo_busqueda");
-        capturarElemento(searchButton, "04_boton_buscar");
+        WebElement categoriaPhones = driver.findElement(By.xpath("//a[contains(text(),'Phones')]"));
+        capturarElemento(categoriaPhones, "08_categoria_phones_link");
+        categoriaPhones.click();
+        log("Categoría seleccionada: Phones");
 
-        searchBox.clear();
-        searchBox.sendKeys("Selenium");
-        searchButton.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".card-block")));
+        capturar("08_categoria_phones_productos");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstHeading")));
-        capturar("04_resultado_busqueda");
+        List<WebElement> productos = driver.findElements(By.cssSelector(".card-block .card-title a"));
+        log("Cantidad de productos visibles: " + productos.size());
 
-        WebElement title = driver.findElement(By.id("firstHeading"));
-        capturarElemento(title, "04_titulo_articulo");
-
-        log("Palabra buscada: Selenium");
-        log("URL cargada: " + driver.getCurrentUrl());
-        log("Resultado encontrado: " + title.getText());
-        log("=== FIN EJERCICIO 4 ===");
-
+        if (!productos.isEmpty()) {
+            WebElement tarjeta = productos.get(0).findElement(By.xpath("./ancestor::div[@class='card-block']"));
+            capturarElemento(tarjeta, "08_tarjeta_producto_phones");
+        }
+        log("=== FIN EJERCICIO 8 ===");
         Thread.sleep(2000);
         driver.quit();
     }
