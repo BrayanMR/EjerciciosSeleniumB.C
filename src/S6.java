@@ -26,8 +26,40 @@ public class S6 {
         FileHandler.copy(origen, destino);
     }
 
+        private static boolean logInicializado = false;
+
     public static void log(String mensaje) {
-        System.out.println(mensaje);
+        System.out.println("[LOG] " + mensaje);
+        try {
+            java.io.File folder = new java.io.File("logs");
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+            try (java.io.FileWriter fw = new java.io.FileWriter("logs/ejercicios.logs", true)) {
+                if (!logInicializado) {
+                    logInicializado = true;
+                    String className = Thread.currentThread().getStackTrace()[2].getClassName();
+                    if (className.contains(".")) {
+                        className = className.substring(className.lastIndexOf('.') + 1);
+                    }
+                    fw.write("\n ===========================\n");
+                    fw.write(java.time.LocalDateTime.now() + " Inicio de prueba - " + className + "\n");
+                    
+                    // Hook para cerrar e imprimir el pie de página de log automáticamente al finalizar el programa
+                    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                        try (java.io.FileWriter fwExit = new java.io.FileWriter("logs/ejercicios.logs", true)) {
+                            fwExit.write(java.time.LocalDateTime.now() + "\n");
+                            fwExit.write("============================================== \n");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }));
+                }
+                fw.write(mensaje + "\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) throws Exception {

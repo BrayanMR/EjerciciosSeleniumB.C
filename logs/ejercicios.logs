@@ -1,0 +1,281 @@
+
+
+ ===========================
+2026-06-20T23:26:56.418856700 Inicio de prueba - S2
+1. Página principal cargada
+2026-06-20T23:27:11.522886200
+============================================== 
+
+ ===========================
+2026-06-20T23:28:09.735961 Inicio de prueba - S3
+1. Navegador iniciado
+2. Página de login cargada
+3. Campo usuario encontrado
+4. Campo contraseña encontrado
+5. Datos ingresados en el formulario
+6. Botón login encontrado
+7. Intento de login realizado
+8. Error mostrado: Invalid credentials
+9. Navegador cerrado
+2026-06-20T23:28:17.277375200
+============================================== 
+
+ ===========================
+2026-06-20T23:28:26.907654400 Inicio de prueba - S4
+=== EJERCICIO 4: Wikipedia ===
+Campo de búsqueda encontrado.
+Palabra buscada: Selenium
+URL cargada: https://es.wikipedia.org/wiki/Selenium
+Resultado encontrado: Selenium
+=== FIN EJERCICIO 4 ===
+2026-06-20T23:28:33.014681300
+============================================== 
+
+ ===========================
+2026-06-20T23:28:47.514875500 Inicio de prueba - S5
+=== EJERCICIO 5: Demoblaze - Carrito con 2 productos ===
+Alerta producto1: Product added
+Alerta producto2: Product added
+Total del carrito: 1180
+FIN EJERCICIO 5
+2026-06-20T23:29:01.323638100
+============================================== 
+
+ ===========================
+2026-06-20T23:29:10.790707 Inicio de prueba - S6
+=== EJERCICIO 6: Automation Exercise - Contacto ===
+2026-06-20T23:29:12.203064900
+============================================== 
+
+ ===========================
+2026-06-20T23:29:27.694195700 Inicio de prueba - S7
+=== EJERCICIO 7: Demoblaze - Menú principal ===
+Clic en: Home
+Clic en: Contact
+Clic en: About us
+2026-06-20T23:29:33.475908500
+============================================== 
+
+ ===========================
+2026-06-20T23:29:49.198484500 Inicio de prueba - S7
+=== EJERCICIO 7: Demoblaze - Menú principal ===
+Clic en: Home
+Clic en: Contact
+Clic en: About us
+2026-06-20T23:29:55.463596900
+============================================== 
+
+===========================
+2026-06-20T23:33:01.569833200 Inicio de prueba - S7
+=== EJERCICIO 7: Demoblaze - Menú principal ===
+Clic en: Home
+Clic en: Contact
+Clic en: About us
+Clic en: Cart
+2026-06-20T23:33:28.218996900
+==============================================
+
+===========================
+2026-06-20T23:35:32.247324500 Inicio de prueba - S7
+=== EJERCICIO 7: Demoblaze - Menú principal ===
+Clic en: Home
+Clic en: Contact
+Clic en: About us
+Clic en: Cart
+2026-06-20T23:35:58.297059800
+==============================================
+
+===========================
+2026-06-20T23:37:51.773583600 Inicio de prueba - S7
+=== EJERCICIO 7: Demoblaze - Menú principal ===
+Clic en: Home
+Clic en: Contact
+Clic en: About us
+Clic en: Cart
+2026-06-20T23:38:17.663943600
+==============================================
+
+===========================
+2026-06-20T23:43:22.815522400 Inicio de prueba - S7
+=== EJERCICIO 7: Demoblaze - Menú principal ===
+Clic en: Home
+Clic en: Contact
+Clic en: About us
+Clic en: Cart
+Clic en: Log in
+=== FIN EJERCICIO 7 ===
+2026-06-20T23:43:42.224620600
+==============================================
+
+===========================
+2026-06-20T23:43:49.495252200 Inicio de prueba - S7
+=== EJERCICIO 7: Demoblaze - Menú principal ===
+Clic en: Home
+Clic en: Contact
+Clic en: About us
+Clic en: Cart
+Clic en: Log in
+=== FIN EJERCICIO 7 ===
+2026-06-20T23:44:09.020493100
+==============================================
+
+ ===========================
+2026-06-20T23:44:20.544997700 Inicio de prueba - S8
+=== EJERCICIO 8: Demoblaze - Categoría Phones ===
+Categoría seleccionada: Phones
+Cantidad de productos visibles: 7
+=== FIN EJERCICIO 8 ===
+2026-06-20T23:44:26.308985900
+============================================== 
+
+ ===========================
+2026-06-20T23:45:30.627440600 Inicio de prueba - S9
+=== EJERCICIO 9: Automation Exercise - Productos visibles ===
+2026-06-20T23:45:47.291347700
+============================================== 
+
+ ===========================
+2026-06-20T23:45:59.702217600 Inicio de prueba - S10
+=== EJERCICIO 10: Automation Exercise - Registro ===
+2026-06-20T23:46:33.244707300
+============================================== 
+
+ ===========================
+2026-06-20T23:46:38.316879700 Inicio de prueba - S11
+No se encontraron productos agregados.
+2026-06-20T23:46:39.618112800
+============================================== 
+
+ ===========================
+2026-06-20T23:47:20.725649800 Inicio de prueba - S12
+Intento fallido de compra.
+2026-06-20T23:47:22.074078500
+============================================== 
+
+ ===========================
+2026-06-20T23:47:46.153937200 Inicio de prueba - S12
+Intento fallido de compra.
+2026-06-20T23:47:47.034081500
+============================================== 
+
+ ===========================
+2026-06-20T23:48:04.341257500 Inicio de prueba - S12
+Intento fallido de compra.
+2026-06-20T23:48:05.149242100
+============================================== 
+
+ ===========================
+2026-06-20T23:49:03.488023200 Inicio de prueba - S14
+Logo encontrado.
+Campo usuario encontrado.
+Campo contraseña encontrado.
+Botón login encontrado.
+Enlace de recuperación encontrado.
+2026-06-20T23:49:08.556061500
+============================================== 
+
+ ===========================
+2026-06-20T23:50:53.532094600 Inicio de prueba - S15
+Autenticación exitosa.
+Panel principal cargado.
+2026-06-20T23:50:55.627397800
+============================================== 
+
+ ===========================
+2026-06-20T23:51:18.659710700 Inicio de prueba - S15
+Autenticación exitosa.
+Panel principal cargado.
+2026-06-20T23:51:20.392389900
+============================================== 
+
+ ===========================
+2026-06-20T23:53:07.059410500 Inicio de prueba - S16
+Tema consultado: Java
+Título obtenido: Java
+2026-06-20T23:53:07.852070800
+============================================== 
+
+ ===========================
+2026-06-20T23:54:28.178935700 Inicio de prueba - S16
+Tema consultado: Java
+Título obtenido: Java
+2026-06-20T23:54:29.803688500
+============================================== 
+
+ ===========================
+2026-06-20T23:55:06.967381600 Inicio de prueba - S16
+Tema consultado: Java
+Título obtenido: Java
+2026-06-20T23:55:08.337889800
+============================================== 
+
+ ===========================
+2026-06-20T23:55:55.278537100 Inicio de prueba - S17
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235555_17_01_inicio.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235555_17_el_01_categoria_laptops.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235558_17_02_laptops.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235558_17_el_02_enlace_producto.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235559_17_03_detalle_producto.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235559_17_el_03_boton_agregar.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235600_17_el_04_menu_cart.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235603_17_04_carrito.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235603_17_el_05_boton_place_order.png
+Evidencia creada en: C:/Users/brian/Downloads/Selenium_ExercisesC4/Selenium_ExercisesC4/evidencias/20260620_235605_17_05_formulario_compra.png
+2026-06-20T23:56:06.907097900
+============================================== 
+
+ ===========================
+2026-06-20T23:59:06.315843400 Inicio de prueba - S18
+URL: https://es.wikipedia.org/wiki/Wikipedia:Portada | Sección: Portada | Hora de visita: 23:59:06
+2026-06-20T23:59:07.277669100
+============================================== 
+
+ ===========================
+2026-06-21T00:00:53.787638500 Inicio de prueba - S18
+URL: https://es.wikipedia.org/wiki/Wikipedia:Portada | Sección: Portada | Hora de visita: 00:00:53
+2026-06-21T00:01:09.795346200
+============================================== 
+
+ ===========================
+2026-06-21T00:01:14.037343 Inicio de prueba - S18
+URL: https://es.wikipedia.org/wiki/Wikipedia:Portada | Sección: Portada | Hora de visita: 00:01:14
+2026-06-21T00:01:29.846839500
+============================================== 
+
+ ===========================
+2026-06-21T00:03:17.898731400 Inicio de prueba - S18
+URL: https://es.wikipedia.org/wiki/Wikipedia:Portada | Sección: Portada | Hora de visita: 00:03:17
+2026-06-21T00:03:33.886019100
+============================================== 
+
+ ===========================
+2026-06-21T00:04:21.232519200 Inicio de prueba - S18
+URL: https://es.wikipedia.org/wiki/Wikipedia:Portada | Sección: Portada | Hora de visita: 00:04:21
+2026-06-21T00:04:37.114008600
+============================================== 
+
+ ===========================
+2026-06-21T00:04:50.635447400 Inicio de prueba - S18
+URL: https://es.wikipedia.org/wiki/Wikipedia:Portada | Sección: Portada | Hora de visita: 00:04:50
+URL: https://es.wikipedia.org/wiki/Portal:Comunidad | Sección: Portal de la comunidad | Hora de visita: 00:04:52
+URL: https://es.wikipedia.org/wiki/Ayuda:Contenidos | Sección: Ayuda | Hora de visita: 00:04:53
+URL: https://es.wikipedia.org/wiki/Especial:CambiosRecientes?hidebots=1&hidecategorization=1&hideWikibase=1&limit=50&days=1&urlversion=2 | Sección: Cambios recientes | Hora de visita: 00:04:56
+URL: https://es.wikipedia.org/wiki/Plectomediocris | Sección: Página aleatoria | Hora de visita: 00:04:58
+2026-06-21T00:05:00.328053600
+============================================== 
+
+ ===========================
+2026-06-21T00:05:22.777201900 Inicio de prueba - S19
+Texto de la alerta: Product added
+2026-06-21T00:05:25.256805
+============================================== 
+
+ ===========================
+2026-06-21T00:06:30.706415600 Inicio de prueba - S18
+URL: https://es.wikipedia.org/wiki/Wikipedia:Portada | Sección: Portada | Hora de visita: 00:06:30
+URL: https://es.wikipedia.org/wiki/Portal:Comunidad | Sección: Portal de la comunidad | Hora de visita: 00:06:32
+URL: https://es.wikipedia.org/wiki/Ayuda:Contenidos | Sección: Ayuda | Hora de visita: 00:06:33
+URL: https://es.wikipedia.org/wiki/Especial:CambiosRecientes?hidebots=1&hidecategorization=1&hideWikibase=1&limit=50&days=1&urlversion=2 | Sección: Cambios recientes | Hora de visita: 00:06:35
+URL: https://es.wikipedia.org/wiki/Aneurisma_mic%C3%B3tico | Sección: Página aleatoria | Hora de visita: 00:06:36
+2026-06-21T00:06:37.408700200
+============================================== 
